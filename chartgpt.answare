@@ -1,0 +1,37 @@
+## Copilot
+Sure! Here's a simple example of a C# function that takes a ref parameter of a generic type T and modifies it:
+
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        int number = 5;
+        Console.WriteLine("Before: " + number);
+        
+        ModifyValue(ref number);
+        
+        Console.WriteLine("After: " + number);
+    }
+
+    public static void ModifyValue<T>(ref T value)
+    {
+        // Assuming T is a type that can be converted to string and back
+        if (value is int)
+        {
+            value = (T)(object)((int)(object)value + 10);
+        }
+        else if (value is string)
+        {
+            value = (T)(object)("Modified: " + value);
+        }
+        // Add more type checks and modifications as needed
+    }
+}
+
+In this example:
+- The ModifyValue function takes a ref parameter of type T.
+- Inside the function, it checks the type of T and modifies the value accordingly.
+- The Main method demonstrates how to call this function with an int type.
+Feel free to adapt this code to suit your specific needs! If you have any questions or need further customization, just let me know.
